@@ -1,4 +1,4 @@
-$.fn.ready(function() {
+$(document).ready(function() {
 
 	var fillHeight = function() {
 		$("textarea").height($(window).height() + "px");
@@ -7,10 +7,16 @@ $.fn.ready(function() {
 	fillHeight();
 
 	var compile = function() {
-		var output = LiScript.compile(this.value);
+		var output = LiScript.compile($("#input").val());
 		$("#output").val(output);
-	}
+		return output;
+	};
 	$("#input").on("keyup change", compile);
 	compile();
+
+	var run = function() {
+		eval(compile());
+	};
+	$("#run").on("click", run);
 
 });
