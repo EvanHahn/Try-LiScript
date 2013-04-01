@@ -63,7 +63,24 @@
 <body>
 
 	<div class="container">
-		<textarea id="input"></textarea>
+		<textarea id="input">(defmacro unless (cond T F) ["if" cond F T])
+(def sad false)
+(unless false (console.log "Awesome!"))
+
+(defmacro square (x) (mul x x))
+(square 12)
+
+(defmacro cube (x) (mul x x x))
+(square 8)
+
+(defmacro half (x) (div x 2))
+(half 24)
+
+(defmacro third (x) (div x 3))
+(third 24)
+
+(defmacro fourth (x) (div x 4))
+(fourth 20)</textarea>
 	</div>
 	<div class="container">
 		<textarea id="output" disabled="disabled"></textarea>
