@@ -6,9 +6,11 @@ $.fn.ready(function() {
 	$(window).on("resize", fillHeight);
 	fillHeight();
 
-	$("#input").on("keyup, change", function() {
+	var compile = function() {
 		var output = LiScript.compile(this.value);
 		$("#output").val(output);
-	});
+	}
+	$("#input").on("keyup change", compile);
+	compile();
 
 });
